@@ -63,7 +63,7 @@ fn power(line: &str) -> u64 {
 }
 
 impl Solution for Day02 {
-    fn part1(input: &str) {
+    fn part1(input: &str) -> String {
         let mut id = 1;
         let mut res = 0;
         for l in input.split('\n') {
@@ -72,10 +72,10 @@ impl Solution for Day02 {
             }
             id += 1;
         }
-        println!("part1: {res}");
+        format!("part1: {res}")
     }
-    fn part2(input: &str) {
+    fn part2(input: &str) -> String {
         let res: u64 = input.split('\n').map(|l| power(l)).sum();
-        println!("part2: {res}");
+        format!("part2: {res}")
     }
 }

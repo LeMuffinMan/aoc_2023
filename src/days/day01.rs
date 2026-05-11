@@ -61,18 +61,18 @@ fn get_calibration_value_part2(line: &str) -> u64 {
 }
 
 impl Solution for Day01 {
-    fn part1(input: &str) {
+    fn part1(input: &str) -> String {
         let res: u64 = input
             .split('\n')
             .map(|l| get_calibration_value_part1(l))
             .sum();
-        println!("part1: {res}");
+        format!("part1: {res}")
     }
-    fn part2(input: &str) {
+    fn part2(input: &str) -> String {
         let res: u64 = input
             .split('\n')
             .map(|l| get_calibration_value_part2(l))
             .sum();
-        println!("part2: {res}");
+        format!("part2: {res}")
     }
 }

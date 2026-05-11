@@ -1,10 +1,9 @@
-use crate::days::solve;
+use aoc_2023::days::solve;
 use clap::Parser;
-use std::path::Path;
-pub mod days;
 use reqwest::blocking::Client;
 use std::env;
 use std::error::Error;
+use std::path::Path;
 
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
@@ -51,13 +50,13 @@ fn main() {
     let args = Cli::parse();
     match args.day {
         Some(day) => match get_input(day) {
-            Ok(input) => solve(day, args.part, input),
+            Ok(input) => println!("{}", solve(day, args.part, input)),
             Err(e) => eprintln!("Error: {e}"),
         },
         None => {
             for day in 1..=DAYS {
                 match get_input(day) {
-                    Ok(input) => solve(day, args.part, input),
+                    Ok(input) => println!("{}", solve(day, args.part, input)),
                     Err(e) => eprintln!("Error: {e}"),
                 }
                 if day != DAYS {
