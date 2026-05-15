@@ -14,7 +14,7 @@ struct Cli {
     part: Option<u8>,
 }
 
-const DAYS: u8 = 3;
+const DAYS: u8 = 4;
 
 pub fn fetch(day: u8) -> Result<String, Box<dyn Error>> {
     dotenv::from_path(".env").ok();
